@@ -14,4 +14,4 @@ for column in data:
     data[column].plot(ax=ax, label=column)
 ax.legend()
 plt.show()
-# %%
+# %% 
