@@ -15,4 +15,3 @@ for column in data:
 ax.legend()
 plt.show()
 # %% 
-# test
