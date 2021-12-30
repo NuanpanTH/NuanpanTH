@@ -66,7 +66,7 @@ telco_raw = pd.read_csv('/Users/pangiiez/workspace/telco.csv',skipinitialspace=T
 telco_raw.isna().sum() 
 telco = telco_raw.dropna()
 ```
-![NaNValues](./Photos/1_NaNValues.png)
+![NaNValues](.//Photos/1_NaNValues.png)
 
 Additional categories on customer's reponses containing `No phone service` and `No internet service` are converted to `No`. 
 
@@ -97,7 +97,7 @@ telco_summary = telco_summary.rename(columns = {'gender':'Number of Observations
 telco_summary = telco_summary.rename_axis('Gender')
 print(telco_summary)
 ```
-![TelcoSummary](./Photos/2_Table1.png)
+![TelcoSummary](.//Photos/2_Table1.png)
 
 ### Question 1
 How much is the the customer churn rate of telco company? and which services did the churners subscribe for?
@@ -121,7 +121,7 @@ axs[1].set_title('Percentage of Churn Outcome', weight='bold', fontsize=13)
 plt.tight_layout()
 plt.show()
 ```
-![Figure1](./Photos/3_Figure1.png)
+![Figure1](.//Photos/3_Figure1.png)
 
 **Figure 2** delineates the distribution of subscriptions for Phone and Internet Service. It is apparent that phone service had the most subscribers with a total number of 4,653 customers, while the number of churners stood at 1,699 - more than one-third of the existing customers.
 
@@ -154,7 +154,7 @@ fig.legend(handles[0], labels, loc='lower center',ncol=2, bbox_to_anchor=(0.5, -
 plt.tight_layout()
 plt.show()
 ```
-![Figure2](./Photos/4_Figure2.png)
+![Figure2](.//Photos/4_Figure2.png)
 
 ### Question 2
 Which contract type has the most churners?
@@ -178,7 +178,7 @@ plt.title('Average Customers per Contract Type', weight='bold',fontsize=13)
 plt.tight_layout()
 plt.show()
 ```
-![Figure3](./Photos/5_Figure3.png)
+![Figure3](.//Photos/5_Figure3.png)
 
 ### Question 3
 Is there any different between the average tenure of churn customers and the average tenure of customers in general?
@@ -204,7 +204,7 @@ telco_avg_tenure_plot.set_title('Average Tenure of Churners VS Average Tenure of
 plt.tight_layout()
 plt.show()
 ```
-![Figure4](./Photos/6_Figure4.png)
+![Figure4](.//Photos/6_Figure4.png)
 
 ### Question 4
 Which group of customers has the longest tenure periods and higest monthly spending?
@@ -247,7 +247,7 @@ plt.show()
 
 telco[(telco['SeniorCitizen'] == 1) & (telco['MonthlyCharges'] < 35)]
 ```
-![Figure5](./Photos/7_Figure5.png)
+![Figure5](.//Photos/7_Figure5.png)
 
 ### Question 5
 What is the correlation among the variables?
@@ -269,7 +269,7 @@ g.set_xticklabels(g.get_xticklabels(), fontsize = 10)
 plt.tight_layout()
 plt.show()
 ```
-![Figure6](./Photos/8_Figure6.png)
+![Figure6](.//Photos/8_Figure6.png)
 
 ## Data Processing
 `Churn` is defined as target variable. Columns are also separated into categorical and numerical columns.
@@ -282,7 +282,7 @@ target = ['Churn']
 categorical = telco.nunique()[telco.nunique()<5].keys().tolist()
 numerical = [col for col in telco.columns if col not in target+categorical]
 ```
-![CatNum](./Photos/9_CatNum.png)
+![CatNum](.//Photos/9_CatNum.png)
 
 Variables in categorical columns are transformed into binary columns with ones and zeros, instead of a text before building a data frame `telcom`.
 
@@ -294,7 +294,7 @@ telcom = pd.get_dummies(data=telco, columns=categorical, drop_first=True)
 telcom = pd.DataFrame(telcom)
 print(telcom)
 ```
-![TelcomDF](./Photos/10_TelcomDF.png)
+![TelcomDF](.//Photos/10_TelcomDF.png)
 
 Prior to performing train/test split, feature and target columns are defined. 
 
@@ -305,7 +305,7 @@ cols = [col for col in telcom.columns if col not in 'Churn_Yes']
 target_col = ['Churn_Yes']
 ```
 
-![TargetFeature](./Photos/11_TargetFeature.png)
+![TargetFeature](.//Photos/11_TargetFeature.png)
 
 The dataset is split into train and test sets in order for the model to learn an effective mapping of inputs and outputs. The percentage of test size is 0.25 (25%), and the remainder of 0.75 (75%) is assigned to the train set.
 
@@ -335,7 +335,7 @@ X_train = X_train.rename(columns={'SC_tenure':'tenure','SC_MonthlyCharges':'Mont
 X_test = X_test.rename(columns={'SC_tenure':'tenure','SC_MonthlyCharges':'MonthlyCharges','SC_TotalCharges':'TotalCharges'})
 ```
 
-![XTrainXTest](./Photos/12_XtrainXtest.png)
+![XTrainXTest](.//Photos/12_XtrainXtest.png)
 
 ## PCA for Feature Selection
 Principal Component Analysis (PCA) is used for dimensionality reduction and feature importance determination. PCA is only applied to `X_train`.
@@ -354,7 +354,7 @@ plt.ylabel("Explained variance (%)")
 plt.tight_layout()
 plt.show()
 ```
-![ExplainedVariance](./Photos/13_Figure7.png)
+![ExplainedVariance](.//Photos/13_Figure7.png)
 
 **Table 2** shows the loading scores of each component. These are the coefficients of the variables which explain how the principal components are constructed from the original variables. 
 
@@ -371,7 +371,7 @@ loadings = pd.DataFrame(
 
 print(loadings.sort_values(by='PC1',ascending=False))
 ```
-![loadingscores](./Photos/14_Table2.png)
+![loadingscores](.//Photos/14_Table2.png)
 
 ## Correlation Analysis
 PCA is applied onto the dataset. The principal components are new variables constructed as linear combinations or mixtures of the initial variables. PCA 
@@ -384,7 +384,7 @@ X_test_pca = pca.transform(X_test)
 
 print(f'''Total number of components is: {pca.n_components_} components''')
 ```
-![NumberofComponents](./Photos/15_NoComponents.png)
+![NumberofComponents](.//Photos/15_NoComponents.png)
 
 In order for the model to be stable and produce realiable estimate of the target variable, it is important that these predictors are not correlated with one another. 
 
@@ -397,7 +397,7 @@ sns.heatmap(X_pca.corr(),
             annot=True,cmap='GnBu')
 plt.show()
 ```
-![Correlation](./Photos/16_Figure8.png)
+![Correlation](.//Photos/16_Figure8.png)
 
 ## SMOTE Resampling
 It is seen from **figure 1** which delineates the percentage of churn outcomes with 73% of non-churners but only 26.6% of churners. This imbalanced classification may lead to low quality of predictive ability. 
@@ -419,7 +419,7 @@ Shape of X after SMOTE: {X_train_sm.shape}''')
 print('\nBalance of positive and negative classes (%):')
 round(Y_train_sm.value_counts(normalize=True) * 100)
 ```
-![SMOTE](./Photos/17_SMOTE.png)
+![SMOTE](.//Photos/17_SMOTE.png)
 
 ## Methodology
 In order to predict whether or not the customers will churn, four different types of classification algorithms will be evaluated, including **logistic regression**, **random forests**, **support vector machine**, and **k-nearest neighbors**. The total predictors consist 11 variables, which explain 85% of variance in the dataset. 
@@ -445,8 +445,8 @@ for c in classifiers:
     y_pred_pca = c.predict(X_test_pca)
     print(classification_report(Y_test, y_pred_pca))
 ```
-![BM1](./Photos/18_BM.png)
-![BM1](./Photos/18.1_BM.png)
+![BM1](.//Photos/18_BM.png)
+![BM1](.//Photos/18.1_BM.png)
 
 | Model | Precision | Recall | Accuracy | F1-score |
 | ----- | --------- | ------ | -------- | -------- |
@@ -483,8 +483,8 @@ logreg_best.fit(X_train_sm, Y_train_sm.values.ravel())
 logreg_best_y_pred = logreg_best.predict(X_test_pca)
 print(classification_report(Y_test, logreg_best_y_pred)) 
 ```
-![Coef](./Photos/19_LR_Coef.png)
-![Classification-Report](./Photos/20_LR_Report.png)
+![Coef](.//Photos/19_LR_Coef.png)
+![Classification-Report](.//Photos/20_LR_Report.png)
 
 ### Random Forest
 Random Forest is an ensemble method using a decision tree as a base estimator. Each estimator is trained on a random subset of bootstrapped samples, commonly referred as sampling with replacement. Once trained, each estimator will output a prediction which then is collected by the random forest meta-classifier. For classification, the final prediction is made by majority voting.
@@ -509,7 +509,7 @@ rf_best.fit(X_train_sm, Y_train_sm.values.ravel())
 rf_best_y_pred = rf_best.predict(X_test_pca)
 print(classification_report(Y_test, rf_best_y_pred))
 ```
-![RandomForest](./Photos/21_RF.png)
+![RandomForest](.//Photos/21_RF.png)
 
 ### Support Vector Machine
 Support Vector Machine is a non-parametric method, which means that the algorithm does not make an assumption about the underlying function, other than patterns of the dataset. The model determines the location of a threshold using so-called the soft margin to make classification. It then forms a hyperplane to classify new observations by looking at which side the new observation is located on the plane mass.
@@ -530,7 +530,7 @@ svc_best.fit(X_train_sm, Y_train_sm.values.ravel())
 svc_best_y_pred = svc_best.predict(X_test_pca) 
 print(classification_report(Y_test, svc_best_y_pred)) 
 ```
-![SVM](./Photos/22_SVM.png)
+![SVM](.//Photos/22_SVM.png)
 
 ### K-nearest Neighbors
 K-Nearest Neighbours is another commonly used non-parametric machine learning algorithm. The model essentially creates a set of decision boundaries and predicts the label of a data point based on the most similar training patterns that are close.
@@ -551,7 +551,7 @@ knn_best = knn_searchCV.best_estimator_
 knn_best_y_pred = knn_best.predict(X_test_pca)
 print(classification_report(Y_test, knn_best_y_pred)) 
 ```
-![KNN](./Photos/23_KNN.png)
+![KNN](.//Photos/23_KNN.png)
 
 ## Model Evaluation
 
@@ -616,7 +616,7 @@ plt.title('ROC Curve Comparison on the Test Set', weight='bold')
 plt.tight_layout()
 plt.show()
 ```
-![ROCAUC](./Photos/17_Figure9.png)
+![ROCAUC](.//Photos/17_Figure9.png)
 
 ## Conclusion
 - The original dataset has 23 features, after applying PCA, the features were reduced to 11. With 11 features, we can explain around 85% of the variance in the dataset.
