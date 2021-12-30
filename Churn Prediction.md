@@ -97,7 +97,7 @@ telco_summary = telco_summary.rename(columns = {'gender':'Number of Observations
 telco_summary = telco_summary.rename_axis('Gender')
 print(telco_summary)
 ```
-![TelcoSummary](/Images/2_Table1.png)
+![TelcoSummary](./Images/2_Table1.png)
 
 ### Question 1
 How much is the the customer churn rate of telco company? and which services did the churners subscribe for?
@@ -335,7 +335,7 @@ X_train = X_train.rename(columns={'SC_tenure':'tenure','SC_MonthlyCharges':'Mont
 X_test = X_test.rename(columns={'SC_tenure':'tenure','SC_MonthlyCharges':'MonthlyCharges','SC_TotalCharges':'TotalCharges'})
 ```
 
-![XTrainXTest](./Images/12_XtrainXtest.png)
+![XTrainXTest](./Images/12_XTrainXTest.png)
 
 ## PCA for Feature Selection
 Principal Component Analysis (PCA) is used for dimensionality reduction and feature importance determination. PCA is only applied to `X_train`.
