@@ -213,7 +213,7 @@ Which group of customers has the longest tenure periods and higest monthly spend
 
 It is observed that the distribution of customer tenure period at the median of younger customers as well as customers who did not have a partner or dependents was lower than senior customers and those who had a partner or dependents. Customers with a partner had the longest tenure period of 46 months at the median, followed by those with dependents and senior clients. 
 
-In terms of monthly spending, senior clients had the highest monthly spending amount, amouting to 84.4 USD, with 87 people having extremely low spending amount of less than 35 USD per month. The shorter boxplot of senior subscribers suggests the difference in spending range between senior and younger clients. The overall spending of senior clients was far higher  between around 70-90 USD per month compared to that of younger ones whose speding range was more varying between 25-85 USD per month.
+In terms of monthly spending, senior clients had the highest monthly spending amount, amouting to 84.4 USD. The shorter boxplot of senior subscribers suggests the difference in spending range between senior and younger clients. The overall spending of senior clients was far higher  between around 70-90 USD per month compared to that of younger ones whose speding range was more varying between 25-85 USD per month.
 
 It is also observed that, despite shorter tenure period, customers with no dependents paid more monthly bill than those with dependents. Customers with a partner is; on the other hand, seen to have around the same spending as those with one even though their tenure period was considerably shorter.
 
@@ -244,8 +244,6 @@ axs[1].legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
 add_median_labels(demo_mc_plot)
 plt.tight_layout()
 plt.show()
-
-telco[(telco['SeniorCitizen'] == 1) & (telco['MonthlyCharges'] < 35)]
 ```
 ![Figure5](./Images/7_Figure5.png)
 
