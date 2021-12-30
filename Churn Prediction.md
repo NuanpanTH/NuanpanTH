@@ -97,7 +97,7 @@ telco_summary = telco_summary.rename(columns = {'gender':'Number of Observations
 telco_summary = telco_summary.rename_axis('Gender')
 print(telco_summary)
 ```
-![TelcoSummary](.//Photos/2_Table1.png)
+![TelcoSummary](/Images/2_Table1.png)
 
 ### Question 1
 How much is the the customer churn rate of telco company? and which services did the churners subscribe for?
