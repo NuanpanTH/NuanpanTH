@@ -25,7 +25,7 @@
 
 
 ## Overview
-Telco is a company providing home phone and internet services to 7,043 customers in California. The dataset provide relevant customer churn information based on a varity of factors including demographic information, customer account information, types of provided services, and churn status.
+Telco is a company providing home phone and internet services to 7,043 customers in California. The dataset provides relevant customer churn information based on a varity of factors including demographic information, customer account information, types of provided services, and churn status.
 
 The aim of the analysis is to identify leading factors that drive exsiting customers to defect, and stregthen the company's customer retention strategies in order to reduce the churn rate.
 
@@ -187,7 +187,7 @@ Is there any different between the average tenure of churn customers and the ave
 
 The dashed line represents an average tenure period of the total number of customers in the dataset, standing at around 32 months. 
 
-The significant different between the average tenure of churn customers (18 months) and the average tenure period of all customers (32 months) indicates that a large number of existing customers prone to defect. Therefore, the company should focus on strengtening its customer rentiontion policy in order to maintain the well-established clients.
+The significant difference between the average tenure of churn customers (18 months) and the average tenure period of all customers (32 months) indicates that a large number of existing customers prone to defect. Therefore, the company should focus on strengtening its customer rentiontion policy in order to maintain the well-established clients.
 
 ```python
 telco_avg_tenure = telco.groupby('Churn')['tenure'].mean()
@@ -209,13 +209,16 @@ plt.show()
 ### Question 4
 Which group of customers has the longest tenure periods and higest monthly spending?
 
-**Figure 5** illustrates the distribution of tenure period of customers and amount of monthly spending according to demographic composition, namely whether or not a customer is a senior citizen? does a customer have partner?, and does a customer have dependents? 
+**Figure 5** illustrates the distribution of tenure period of customers and amount of monthly spending according to demographic composition, namely whether or not a customer is a senior citizen? does a customer have 
+
+
+?, and does a customer have dependents? 
 
 It is observed that the distribution of customer tenure period at the median of younger customers as well as customers who did not have a partner or dependents was lower than senior customers and those who had a partner or dependents. Customers with a partner had the longest tenure period of 46 months at the median, followed by those with dependents and senior clients. 
 
 In terms of monthly spending, senior clients had the highest monthly spending amount, amouting to 84.4 USD. The shorter boxplot of senior subscribers suggests the difference in spending range between senior and younger clients. The overall spending of senior clients was far higher  between around 70-90 USD per month compared to that of younger ones whose speding range was more varying between 25-85 USD per month.
 
-It is also observed that, despite shorter tenure period, customers with no dependents paid more monthly bill than those with dependents. Customers with a partner is; on the other hand, seen to have around the same spending as those with one even though their tenure period was considerably shorter.
+It is also observed that, despite shorter tenure period, customers with no dependents paid more monthly bill than those with dependents. Customers with a partner is; on the other hand, seen to have around the same spending as those without one even though their tenure period was considerably shorter.
 
 ```python
 demo_tenure = telco[['SeniorCitizen','Partner','Dependents','tenure']]
