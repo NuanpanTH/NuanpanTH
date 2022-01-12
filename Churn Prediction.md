@@ -209,16 +209,13 @@ plt.show()
 ### Question 4
 Which group of customers has the longest tenure periods and higest monthly spending?
 
-**Figure 5** illustrates the distribution of tenure period of customers and amount of monthly spending according to demographic composition, namely whether or not a customer is a senior citizen? does a customer have 
-
-
-?, and does a customer have dependents? 
+**Figure 5** illustrates the distribution of tenure period of customers and amount of monthly spending according to demographic composition, namely whether or not a customer is a senior citizen? does a customer have?, and does a customer have dependents? 
 
 It is observed that the distribution of customer tenure period at the median of younger customers as well as customers who did not have a partner or dependents was lower than senior customers and those who had a partner or dependents. Customers with a partner had the longest tenure period of 46 months at the median, followed by those with dependents and senior clients. 
 
 In terms of monthly spending, senior clients had the highest monthly spending amount, amouting to 84.4 USD. The shorter boxplot of senior subscribers suggests the difference in spending range between senior and younger clients. The overall spending of senior clients was far higher  between around 70-90 USD per month compared to that of younger ones whose speding range was more varying between 25-85 USD per month.
 
-It is also observed that, despite shorter tenure period, customers with no dependents paid more monthly bill than those with dependents. Customers with a partner is; on the other hand, seen to have around the same spending as those without one even though their tenure period was considerably shorter.
+Despite shorter tenure period, customers with no dependents paid more monthly bill than those with dependents. Customers with a partner is; on the other hand, seen to have around the same spending as those without one even though their tenure period was considerably shorter.
 
 ```python
 demo_tenure = telco[['SeniorCitizen','Partner','Dependents','tenure']]
