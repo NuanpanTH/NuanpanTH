@@ -187,7 +187,7 @@ Is there any different between the average tenure of churn customers and the ave
 
 The dashed line represents an average tenure period of the total number of customers in the dataset, standing at around 32 months. 
 
-The significant difference between the average tenure of churn customers (18 months) and the average tenure period of all customers (32 months) indicates that a large number of existing customers prone to defect. Therefore, the company should focus on strengtening its customer rentiontion policy in order to maintain the well-established clients.
+The significant difference between the average tenure of churn customers (18 months) and the average tenure period of all customers (32 months) indicates that a large number of new customers prone to defect. Therefore, the company should focus on keeping new customers onboard and strengtening its customer rentiontion policy in order to maintain the well-established clients.
 
 ```python
 telco_avg_tenure = telco.groupby('Churn')['tenure'].mean()
