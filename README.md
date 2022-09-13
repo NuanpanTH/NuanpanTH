@@ -1,4 +1,4 @@
-# Telco 
+# Telco Churn Prediction using SMOTE resampling
 
 ## Table of Contents
 - [Overview](#overview)
