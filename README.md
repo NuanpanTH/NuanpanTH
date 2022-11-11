@@ -28,7 +28,7 @@
 ## Overview
 Telco is a company providing home phone and internet services to 7,043 customers in California. The dataset provides relevant customer churn information based on a varity of factors including demographic information, customer account information, types of provided services, and churn status.
 
-The aim of the analysis is to identify leading factors that drive exsiting customers to defect, and stregthen the company's customer retention strategies in order to reduce the churn rate.
+The aim of the analysis is to identify leading factors that drive existing customers to defect, and strengthen the company's customer retention strategies in order to reduce the churn rate.
 
 ## Data Cleaning
 
